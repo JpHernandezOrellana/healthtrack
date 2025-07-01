@@ -107,13 +107,13 @@ El acceso a SonarQube desde Jenkins se realiza mediante tokens protegidos con wi
 
 El proyecto ahora cuenta con un proceso completo de validación continua que:
 
-Detecta errores críticos antes de llegar a producción.
+- Detecta errores críticos antes de llegar a producción.
 
-Asegura la calidad y estabilidad del sistema.
+- Asegura la calidad y estabilidad del sistema.
 
-Mejora la trazabilidad y confiabilidad de los cambios.
+- Mejora la trazabilidad y confiabilidad de los cambios.
 
-HealthTrack está listo para escalar como una solución moderna, confiable y automatizada.
+- HealthTrack está listo para escalar como una solución moderna, confiable y automatizada.
 
 
 
