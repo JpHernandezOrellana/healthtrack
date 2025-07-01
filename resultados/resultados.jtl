@@ -1,0 +1,2 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1751331370942,28,GET raíz HealthTrack,200,OK,Usuarios simulados 1-1,text,true,,515,116,1,1,http://localhost:4567/,25,0,17
