@@ -79,24 +79,25 @@ healthtrack_test.jmx	Script JMeter para pruebas de carga
 🚀 Cómo Ejecutar
 
 Requisitos:
-Java 21
 
-Maven 3
+- Java 21
 
-Jenkins instalado y configurado
+- Maven 3
 
-SonarQube activo (local o remoto)
+- Jenkins instalado y configurado
 
-Apache JMeter
+- SonarQube activo (local o remoto)
+
+- Apache JMeter
 
 Ejecutar pruebas localmente:
 
-bash
-Copiar
-Editar
-mvn clean test
-Ejecutar el pipeline automáticamente:
-Realiza un git push al repositorio. Jenkins detectará el cambio y ejecutará todas las etapas del pipeline.
+- bash
+- Copiar
+- Editar
+- mvn clean test
+- Ejecutar el pipeline automáticamente:
+- Realiza un git push al repositorio. Jenkins detectará el cambio y ejecutará todas las etapas del pipeline.
 
 🔐 Seguridad
 
