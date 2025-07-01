@@ -54,19 +54,19 @@ Evalúa tiempo de respuesta y estabilidad bajo carga.
 
 El archivo Jenkinsfile contiene las siguientes etapas automatizadas:
 
-Preparación del entorno
+- Preparación del entorno
 
-Clonación del repositorio desde GitHub
+- Clonación del repositorio desde GitHub
 
-Compilación del proyecto con Maven
+- Compilación del proyecto con Maven
 
-Ejecución de pruebas unitarias
+- Ejecución de pruebas unitarias
 
-Pruebas de rendimiento con JMeter
+- Pruebas de rendimiento con JMeter
 
-Análisis de calidad de código con SonarQube
+- Análisis de calidad de código con SonarQube
 
-Reporte del estado del pipeline
+- Reporte del estado del pipeline
 
 📁 Archivos Relevantes
 Archivo / Carpeta	Descripción
