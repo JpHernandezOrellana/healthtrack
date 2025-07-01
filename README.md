@@ -1,91 +1,117 @@
-# HealthTrack 🩺
+# 🩺 HealthTrack
 
-**HealthTrack** es una plataforma de monitoreo de peso desarrollada en Java. Este proyecto fue realizado como parte de la Evaluación del Módulo 4 del curso *Fundamentos de DevOps*.
+**HealthTrack** es una plataforma Java para el monitoreo de peso corporal, desarrollada como parte de la **Evaluación del Módulo 4 del curso Fundamentos de DevOps**.
 
-El enfoque principal fue diseñar e implementar un pipeline de CI/CD que garantice la calidad del código mediante pruebas automatizadas y análisis estático.
+El objetivo principal fue **automatizar la validación del código mediante pruebas y análisis de calidad**, integrando un pipeline de CI/CD completo con herramientas modernas del ecosistema DevOps.
 
 ---
 
 ## ⚠️ Problema Detectado
 
-El sistema originalmente contenía un bug crítico:
-```this.peso -= 1;```
-Cada vez que un usuario actualizaba su peso, el sistema restaba 1 kg en lugar de guardar el nuevo valor. Esto generaba datos incorrectos y pérdida de confianza en la plataforma.
+El sistema contenía un error crítico en el método `actualizarPeso()`:
+
+```java this.peso -= 1;```
+Esto provocaba que, al actualizar su peso, el usuario perdiera automáticamente 1 kg, sin importar el valor ingresado. Este fallo generaba:
+
+Datos incorrectos en el historial.
+
+Pérdida de confianza en la plataforma.
+
+Riesgo sanitario si se usa con fines médicos.
 
 ✅ Solución Implementada
-Se corrigió la lógica y se implementaron pruebas automatizadas que detectan errores en cada etapa del desarrollo:
+Se corrigió la lógica y se desarrolló un proceso de validación continuo mediante:
 
 ✅ Pruebas unitarias con JUnit
 
-✅ Pruebas funcionales sin UI con Spark Java (mock de endpoints)
+✅ Pruebas funcionales sin interfaz gráfica usando Spark Java
 
 ✅ Pruebas de rendimiento con Apache JMeter
 
-✅ Análisis estático con SonarQube
+✅ Análisis estático de código con SonarQube
 
-✅ Pipeline de CI/CD automatizado en Jenkins
+✅ Pipeline CI/CD automatizado en Jenkins
 
 🧪 Estructura de Pruebas
-🔹 Pruebas Unitarias
+🔹 Pruebas Unitarias (JUnit)
 Ubicación: src/test/java/...
 
-Ejecutan casos específicos del método actualizarPeso() para asegurar su correcto funcionamiento.
+Validan el método actualizarPeso() para asegurar que guarda correctamente el valor ingresado.
 
-🔹 Pruebas Funcionales
-Simulan el flujo de usuario (registro, actualización y consulta de peso) mediante endpoints mockeados en Spark Java.
+🔹 Pruebas Funcionales (Spark Java)
+Simulan el flujo completo del usuario: registro, actualización y consulta de peso.
 
-🔹 Pruebas de Rendimiento
-El script de Apache JMeter (healthtrack_test.jmx) simula múltiples usuarios accediendo al sistema en paralelo.
+Se ejecutan sobre endpoints mockeados con Spark Java (sin UI).
+
+🔹 Pruebas de Rendimiento (JMeter)
+Archivo: healthtrack_test.jmx
+
+Simula múltiples usuarios actualizando su peso en paralelo.
+
+Evalúa tiempo de respuesta y estabilidad bajo carga.
 
 ⚙️ CI/CD Pipeline (Jenkins)
-El archivo Jenkinsfile contiene todas las etapas:
+El archivo Jenkinsfile contiene las siguientes etapas automatizadas:
 
-- Preparación del entorno
+Preparación del entorno
 
-- Clonación del repositorio
+Clonación del repositorio desde GitHub
 
-- Compilación con Maven
+Compilación del proyecto con Maven
 
-- Ejecución de pruebas unitarias
+Ejecución de pruebas unitarias
 
-- Lanzamiento de pruebas de rendimiento (JMeter)
+Pruebas de rendimiento con JMeter
 
-- Análisis con SonarQube
+Análisis de calidad de código con SonarQube
 
-Resultado final
+Reporte del estado del pipeline
 
-📂 Archivos Importantes
-src/ – Código fuente del proyecto
-
-pom.xml – Configuración de Maven
-
-Jenkinsfile – Definición del pipeline CI/CD
-
-sonar-project.properties – Configuración de SonarQube
-
-healthtrack_test.jmx – Script de pruebas de rendimiento con JMeter
+📁 Archivos Relevantes
+Archivo / Carpeta	Descripción
+src/	Código fuente de la aplicación
+pom.xml	Configuración de dependencias y build con Maven
+Jenkinsfile	Definición del pipeline CI/CD en Jenkins
+sonar-project.properties	Configuración para análisis con SonarQube
+healthtrack_test.jmx	Script JMeter para pruebas de carga
 
 🚀 Cómo Ejecutar
-Requisitos
+Requisitos:
 Java 21
 
 Maven 3
 
-Jenkins instalado
+Jenkins instalado y configurado
 
-SonarQube configurado y levantado localmente
+SonarQube activo (local o remoto)
 
 Apache JMeter
 
-Ejecutar pruebas localmente
+Ejecutar pruebas localmente:
 bash
 Copiar
 Editar
 mvn clean test
-Ejecutar pipeline
-Haz un git push al repositorio conectado en Jenkins. Se disparará automáticamente el análisis completo.
+Ejecutar el pipeline automáticamente:
+Realiza un git push al repositorio. Jenkins detectará el cambio y ejecutará todas las etapas del pipeline.
 
-🔒 Seguridad
-Se utilizó withCredentials en Jenkins para proteger el token de SonarQube, evitando exponer información sensible en el pipeline.
+🔐 Seguridad
+El acceso a SonarQube desde Jenkins se realiza mediante tokens protegidos con withCredentials, evitando exponer información sensible directamente en el Jenkinsfile.
+
+📌 Resultado Final
+El proyecto ahora cuenta con un proceso completo de validación continua que:
+
+Detecta errores críticos antes de llegar a producción.
+
+Asegura la calidad y estabilidad del sistema.
+
+Mejora la trazabilidad y confiabilidad de los cambios.
+
+HealthTrack está listo para escalar como una solución moderna, confiable y automatizada.
+
+go
+Copiar
+Editar
+
 
 
