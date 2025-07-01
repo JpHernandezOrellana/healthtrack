@@ -6,7 +6,7 @@ El objetivo principal fue **automatizar la validación del código mediante prue
 
 ---
 
-## ⚠️ Problema Detectado
+## Problema Detectado
 
 El sistema contenía un error crítico en el método `actualizarPeso()`:
 
