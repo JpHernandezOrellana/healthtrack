@@ -13,11 +13,11 @@ El sistema contenía un error crítico en el método `actualizarPeso()`:
 ```java this.peso -= 1;```
 Esto provocaba que, al actualizar su peso, el usuario perdiera automáticamente 1 kg, sin importar el valor ingresado. Este fallo generaba:
 
-Datos incorrectos en el historial.
+- Datos incorrectos en el historial.
 
-Pérdida de confianza en la plataforma.
+- Pérdida de confianza en la plataforma.
 
-Riesgo sanitario si se usa con fines médicos.
+- Riesgo sanitario si se usa con fines médicos.
 
 **Solución Implementada**
 
