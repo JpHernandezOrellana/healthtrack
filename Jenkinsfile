@@ -4,10 +4,15 @@ pipeline {
     tools {
         maven 'Maven3'
         jdk 'JDK21'
-        git 'Git'
     }
 
     stages {
+        stage('Preparar entorno') {
+            steps {
+                cleanWs()
+            }
+        }
+
         stage('Clonar código') {
             steps {
                 git branch: 'main', url: 'https://github.com/JpHernandezOrellana/healthtrack.git'
@@ -34,9 +39,14 @@ pipeline {
     }
 
     post {
+        success {
+            echo '✅ Pipeline completado exitosamente.'
+        }
         failure {
             echo '❌ Falló el pipeline.'
         }
+        always {
+            echo '📦 Pipeline finalizado. Revisar logs si hubo errores.'
+        }
     }
 }
- kakaca
