@@ -51,6 +51,7 @@ Simula múltiples usuarios actualizando su peso en paralelo.
 Evalúa tiempo de respuesta y estabilidad bajo carga.
 
 ⚙️ CI/CD Pipeline (Jenkins)
+
 El archivo Jenkinsfile contiene las siguientes etapas automatizadas:
 
 Preparación del entorno
@@ -76,6 +77,7 @@ sonar-project.properties	Configuración para análisis con SonarQube
 healthtrack_test.jmx	Script JMeter para pruebas de carga
 
 🚀 Cómo Ejecutar
+
 Requisitos:
 Java 21
 
@@ -88,6 +90,7 @@ SonarQube activo (local o remoto)
 Apache JMeter
 
 Ejecutar pruebas localmente:
+
 bash
 Copiar
 Editar
@@ -96,9 +99,11 @@ Ejecutar el pipeline automáticamente:
 Realiza un git push al repositorio. Jenkins detectará el cambio y ejecutará todas las etapas del pipeline.
 
 🔐 Seguridad
+
 El acceso a SonarQube desde Jenkins se realiza mediante tokens protegidos con withCredentials, evitando exponer información sensible directamente en el Jenkinsfile.
 
 📌 Resultado Final
+
 El proyecto ahora cuenta con un proceso completo de validación continua que:
 
 Detecta errores críticos antes de llegar a producción.
@@ -109,9 +114,7 @@ Mejora la trazabilidad y confiabilidad de los cambios.
 
 HealthTrack está listo para escalar como una solución moderna, confiable y automatizada.
 
-go
-Copiar
-Editar
+
 
 
 
