@@ -40,17 +40,17 @@ El script de Apache JMeter (healthtrack_test.jmx) simula múltiples usuarios acc
 ⚙️ CI/CD Pipeline (Jenkins)
 El archivo Jenkinsfile contiene todas las etapas:
 
-Preparación del entorno
+- Preparación del entorno
 
-Clonación del repositorio
+- Clonación del repositorio
 
-Compilación con Maven
+- Compilación con Maven
 
-Ejecución de pruebas unitarias
+- Ejecución de pruebas unitarias
 
-Lanzamiento de pruebas de rendimiento (JMeter)
+- Lanzamiento de pruebas de rendimiento (JMeter)
 
-Análisis con SonarQube
+- Análisis con SonarQube
 
 Resultado final
 
