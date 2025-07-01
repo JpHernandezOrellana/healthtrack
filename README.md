@@ -19,8 +19,9 @@ Pérdida de confianza en la plataforma.
 
 Riesgo sanitario si se usa con fines médicos.
 
-✅ Solución Implementada
-Se corrigió la lógica y se desarrolló un proceso de validación continuo mediante:
+Solución Implementada
+
+✅ Se corrigió la lógica y se desarrolló un proceso de validación continuo mediante:
 
 ✅ Pruebas unitarias con JUnit
 
