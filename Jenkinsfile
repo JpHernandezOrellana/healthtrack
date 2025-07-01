@@ -6,6 +6,11 @@ pipeline {
         jdk 'JDK21'
     }
 
+    environment {
+        SONAR_SCANNER_HOME = '/home/jp/utilidades/sonar-scanner'
+        SONAR_TOKEN = 'sqp_8d325a7462a31e1538d6faca100857f2e299d536'
+    }
+
     stages {
         stage('Preparar entorno') {
             steps {
@@ -37,9 +42,18 @@ pipeline {
             }
         }
 
+        stage('Análisis de código con SonarQube') {
+            steps {
+                sh '''
+                    ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
+                    -Dsonar.login=${SONAR_TOKEN}
+                '''
+            }
+        }
+
         stage('Final') {
             steps {
-                echo '✅ Compilación y pruebas finalizadas correctamente.'
+                echo '✅ Compilación, pruebas y análisis finalizados correctamente.'
             }
         }
     }
