@@ -8,7 +8,6 @@ pipeline {
 
     environment {
         SONAR_SCANNER_HOME = '/home/jp/utilidades/sonar-scanner'
-        SONAR_TOKEN = 'sqp_8d325a7462a31e1538d6faca100857f2e299d536'
     }
 
     stages {
@@ -44,10 +43,12 @@ pipeline {
 
         stage('Análisis de código con SonarQube') {
             steps {
-                sh '''
-                    ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
-                    -Dsonar.login=${SONAR_TOKEN}
-                '''
+                withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
+                    sh '''
+                        ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
+                        -Dsonar.login=${SONAR_TOKEN}
+                    '''
+                }
             }
         }
 
@@ -70,6 +71,3 @@ pipeline {
         }
     }
 }
-
-
-// hola
