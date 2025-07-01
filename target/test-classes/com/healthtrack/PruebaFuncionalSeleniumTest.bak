@@ -1,0 +1,25 @@
+package com.healthtrack;
+
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class PruebaFuncionalSeleniumTest {
+
+    @Test
+    public void testAbrirPagina() {
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless"); // ← modo headless compatible
+        WebDriver driver = new FirefoxDriver(options);
+
+        driver.get("https://example.com");
+
+        String titulo = driver.getTitle();
+        assertTrue(titulo.contains("Example"));
+
+        driver.quit();
+    }
+}
