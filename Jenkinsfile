@@ -33,7 +33,7 @@ pipeline {
 
         stage('Pruebas de rendimiento') {
             steps {
-                sh '~/apache-jmeter-5.6.3/bin/jmeter -n -t pruebas/prueba_basica.jmx -l resultados/resultados.jtl'
+                sh '/home/jp/apache-jmeter-5.6.3/bin/jmeter -n -t pruebas/prueba_basica.jmx -l resultados/resultados.jtl'
             }
         }
 
